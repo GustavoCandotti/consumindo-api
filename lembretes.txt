@@ -1,0 +1,9 @@
+    .then(resposta => resposta.json()) //os dados chegam em bytes, utilizamos para trazer as informações formatas, o json basicamente possui a mesma sintaxe que de um objeto Js.
+   .then (r => {
+       if (r.erro) {
+            throw Error('Esse cep não existe!')
+      } else 
+       console.log(r)
+    })
+   .catch(erro => console.log(erro)) //parametro erro, retorne erro
+   .finally(mensagem => console.log('Processamento concluído!')); //finalmente, independente da resposta.
